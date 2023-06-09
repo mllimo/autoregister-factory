@@ -32,11 +32,11 @@ private:
     SingletonIFactory() = default;
 };
 
-template <typename Key, typename SpecialicedObject, typename BaseObject>
+template <typename Key, typename SpecializedObject, typename BaseObject>
 class AutoRegisterFactory {
 public:
     AutoRegisterFactory(const Key& key) {
-        SingletonIFactory<Key, BaseObject>::Get().Add<SpecialicedObject>(key);
+        SingletonIFactory<Key, BaseObject>::Get().Add<SpecializedObject>(key);
     }
 };
 
